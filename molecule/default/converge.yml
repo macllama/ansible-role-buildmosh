@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include macllama.buildmosh"
+      include_role:
+        name: "macllama.buildmosh"

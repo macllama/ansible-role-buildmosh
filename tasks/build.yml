@@ -1,0 +1,37 @@
+---
+- name: Check if mosh is already installed
+  stat:
+    path: /usr/local/bin/mosh
+  register: mosh
+
+- name: Clone mosh
+  git:
+    repo: https://github.com/mobile-shell/mosh.git
+    version: master
+    dest: /tmp/mosh
+    update: false
+  when: not mosh.stat.exists
+
+- name: autogen mosh configure file
+  command: ./autogen.sh
+  args:
+    chdir: /tmp/mosh
+  when: not mosh.stat.exists
+
+- name: configure mosh build
+  command: ./configure
+  args:
+    chdir: /tmp/mosh
+  when: not mosh.stat.exists
+
+- name: Build mosh
+  command: make
+  args:
+    chdir: /tmp/mosh
+  when: not mosh.stat.exists
+
+- name: Install mosh
+  command: make install
+  args:
+    chdir: /tmp/mosh
+  when: not mosh.stat.exists

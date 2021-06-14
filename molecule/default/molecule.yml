@@ -1,0 +1,32 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: CentOS7
+    image: centos:7
+    pre_build: true
+  - name: DebianBuster
+    image: debian:buster
+    pre_build: true
+  - name: DebianBullseye
+    image: debian:bullseye
+    pre_build: true
+  - name: openSUSE15
+    image: opensuse/leap:15
+    pre_build: true
+  - name: Ubuntu18.04
+    image: ubuntu:18.04
+    pre_build: true
+  - name: Ubuntu20.04
+    image: ubuntu:20.04
+    pre_build: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .

@@ -1,0 +1,13 @@
+---
+- name: Verify mosh installed correctly
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Get mosh version
+      command: /usr/local/bin/mosh -V
+      register: mosh
+      changed_when: true
+    - name: Validate mosh version is correct
+      assert:
+        that:
+          - mosh.stdout.find("[build") != -1

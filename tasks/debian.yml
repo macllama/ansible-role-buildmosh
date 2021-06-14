@@ -1,0 +1,21 @@
+---
+- name: Install mosh pre-reqs
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+  vars:
+    packages:
+      - automake
+      - g++
+      - git
+      - libboost-dev
+      - libio-pty-perl
+      - libncurses5-dev
+      - libprotobuf-dev
+      - libssl-dev
+      - libtool
+      - libutempter-dev
+      - make
+      - pkg-config
+      - protobuf-compiler
+      - zlib1g-dev

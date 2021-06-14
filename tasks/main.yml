@@ -1,0 +1,15 @@
+---
+- name: Install Debian Pre-reqs
+  include_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Install Redhat Pre-reqs
+  include_tasks: redhat.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
+
+- name: Install SUSE Pre-reqs
+  include_tasks: suse.yml
+  when: ansible_facts['os_family']|lower == 'suse'
+
+- name: Build Mosh
+  include_tasks: build.yml

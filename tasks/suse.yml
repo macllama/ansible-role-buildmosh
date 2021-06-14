@@ -1,0 +1,20 @@
+---
+- name: Install the devel_C_C++ pattern
+  zypper:
+    name: "devel_C_C++"
+    type: pattern
+    state: present
+
+- name: Install mosh pre-reqs
+  zypper:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - git
+      - libopenssl-devel
+      - make
+      - ncurses-devel
+      - protobuf-devel
+      - protobuf-devel
+      - zlib-devel
