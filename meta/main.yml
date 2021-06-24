@@ -1,10 +1,10 @@
 ---
 galaxy_info:
   role_name: buildmosh
-  namespace: macllama
-  author: The Mac Llama
+  namespace: couchllama
+  author: The Couch Llama
   description: Build and install mosh from master
-  # issue_tracker_url: https://github.com/macllama/ansiblerole-buildmosh/issues
+  # issue_tracker_url: https://github.com/couchllama/ansiblerole-buildmosh/issues
   license: BSD-3-Clause
   min_ansible_version: 2.1
 

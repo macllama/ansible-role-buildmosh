@@ -26,4 +26,4 @@ BSD
 
 ## Author Information
 
-The Mac Llama (llama@macllama.com)
+The Couch Llama (llama@couchllama.com)
